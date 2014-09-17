@@ -8,7 +8,7 @@ public class GlobalInterceptador {
 	
 	@PostConstruct
 	public void init(InvocationContext iv) throws Exception{
-		System.out.println("Global Interceptador >>> Inicializacao >>> Metodo: " + iv.getMethod());
+		System.out.println("Global Interceptador >>> Inicializacao >>> Classe: " + iv.getTarget().getClass().getName());
 		iv.proceed();
 	}
 	
