@@ -1,0 +1,14 @@
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee" version="3.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemalocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd">
+	
+	<assembly-descriptor>
+		<!-- Default interceptor that will apply to all methods for all beans in 
+			deployment -->
+		<interceptor-binding>
+			<ejb-name>*</ejb-name>
+			<interceptor-class>br.com.testes.ejb.GlobalInterceptador</interceptor-class>
+		</interceptor-binding>
+	</assembly-descriptor>
+	
+</ejb-jar>
