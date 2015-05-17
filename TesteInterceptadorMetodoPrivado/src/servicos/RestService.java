@@ -17,8 +17,25 @@ public class RestService {
 	@Path("/say")
 	@GET
 	@Produces(javax.ws.rs.core.MediaType.TEXT_PLAIN)
-	public String say(@PathParam("name") String name){
+	public String say(){
 		return ejb.sayHello();
 	}
+	
+	@Path("/say2")
+	@GET
+	@Produces(javax.ws.rs.core.MediaType.TEXT_PLAIN)
+	public String say2(){
+		return ejb.sayHello2();
+	}
+	
+	
+	@Path("/say3")
+	@GET
+	@Produces(javax.ws.rs.core.MediaType.TEXT_PLAIN)
+	public String say3(){
+		return ejb.sayHello3();
+	}
+	
+	
 
 }
