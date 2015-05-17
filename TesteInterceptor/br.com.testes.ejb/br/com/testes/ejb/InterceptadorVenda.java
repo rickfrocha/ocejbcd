@@ -1,6 +1,7 @@
 package br.com.testes.ejb;
 
 import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
 
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.InvocationContext;
@@ -15,7 +16,8 @@ public class InterceptadorVenda {
 			System.out.println("Interceptor venda >>> Valor inválido!!: " );
 			return Boolean.FALSE;
 		}
-		return iv.proceed();
+		TimeUnit.SECONDS.sleep(5);
+		return iv.proceed();		
 	}
 
 }

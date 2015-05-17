@@ -2,7 +2,6 @@ package br.com.testes.ejb;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
-import javax.interceptor.ExcludeDefaultInterceptors;
 import javax.interceptor.Interceptors;
 
 @Stateless(name="vendaEJB")
