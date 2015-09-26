@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar version="3.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/ejb-jar_3_2.xsd">
+
+	<enterprise-beans>
+		<session>
+		   <ejb-name>myEJB</ejb-name>
+		   <env-entry>
+		      <!-- Com esta sintaxe, utiliza-se nome totalmente qualificado da classe + / + campo. 
+		           Desta forma nao é necessário utilizar o atributo "name" na anotacao @Resource
+		           Deve ser utilizado somente para o EJB do entry name especificado 
+		      -->
+		      <env-entry-name>EJB.MyEJB/tipoLog</env-entry-name>
+		      <env-entry-type>java.lang.Integer</env-entry-type>
+		      <env-entry-value>10</env-entry-value>
+		   </env-entry>
+		   
+		   <env-entry>
+		      <!-- 
+		         Com esta sintaxe, é dado um nome ficticio e pode-se utilizar esta mesma 
+		         entrada de ambiente em outros EJBs
+		       --> 
+		      <env-entry-name>porta</env-entry-name>
+		      <env-entry-type>java.lang.Integer</env-entry-type>
+		      <env-entry-value>27</env-entry-value>
+		   </env-entry>
+		   
+		   <env-entry>
+		     <!-- 
+		        Esta sintaxe dispensa o uso da anotacao @Resource (As anteriores precisam dela)
+		        É direcionado á um EJB especifico atraves do injection-target onde define o EJB e o atributo
+		      -->
+		     <env-entry-name>email</env-entry-name>
+		     <env-entry-type>java.lang.String</env-entry-type>
+		     <env-entry-value>rocha.ricardo@hp.com</env-entry-value>
+		     <injection-target>
+		        <injection-target-class>EJB.MyEJB</injection-target-class>
+		        <injection-target-name>emailContato</injection-target-name>
+		     </injection-target> 
+		   </env-entry>
+		   
+		   
+		   <env-entry>
+		      <!-- Esta definicao sera utilizada para obter valor via Lookup -->
+		      <env-entry-name>smtpLookup</env-entry-name>
+		      <env-entry-type>java.lang.String</env-entry-type>
+		      <env-entry-value>10.0.0.1</env-entry-value>
+		   </env-entry>
+		   
+		</session>		
+		   
+	</enterprise-beans>
+	
+</ejb-jar>
