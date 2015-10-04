@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar version="3.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/ejb-jar_3_2.xsd">
+	<display-name>TesteEJBModule</display-name>
+	
+	<enterprise-beans>
+	
+	    <!-- 
+	       É possivel definir a mesma classe de implementação para varias instancias de MDB
+	       Basicamente é como dizer quantas instancias do MDB deverao ser criadas
+	     --> 
+		<message-driven>
+		   <ejb-name>MyMDBQueue</ejb-name> 
+		   <ejb-class>ejb.MyMDBQueueBean</ejb-class>
+		</message-driven>
+
+		<message-driven>
+		   <ejb-name>MyMDBQueue2</ejb-name> 
+		   <ejb-class>ejb.MyMDBQueueBean</ejb-class>
+		</message-driven>
+
+		<message-driven>
+		   <ejb-name>MyMDBQueue3</ejb-name> 
+		   <ejb-class>ejb.MyMDBQueueBean</ejb-class>
+		</message-driven>
+	
+	</enterprise-beans>
+	
+</ejb-jar>
